@@ -2,6 +2,8 @@
 
 A small jQuery plugin that allows you to add specific styles to an element (a sticky title for example) according to the section that the user is currently scrolling over.
 
+[See the DEMO](https://codepen.io/balix/full/BerzrK)
+
 ## Setup
 
 ### Including files
@@ -30,7 +32,7 @@ Call the plugin inside a `$(document).ready` function :
 
 ```javascript
 $(document).ready(function() {
-	$('.header').scrollStyles();
+    $('.header').scrollStyles();
 });
 ```
 
@@ -42,5 +44,4 @@ Option | Type | Default | Description
 ------ | ---- | ------- | -----------
 frameRate | Seconds | 500 | Refresh time on scroll
 scrollOffset | Number | 50 | Trigger the event before the scroll has arrived to the section
-targetElements | String | '.slide' | Sections that should update the toggle element on scroll
-toggleElement | String | '.toggle-element' | The element that will get the sections classes on scorll
+targetElements | String | '.scrollstyles-section' | Sections that should update the toggle element on scroll
