@@ -28,34 +28,34 @@
             // Remove previous entries
             sections = [];
             
-            // For every slides
+            // For every sections
             for (var i = 0 ; i < $(settings.sectionElements).length ; i++) {
                 var element = $(settings.sectionElements)[i];
-                var slideStartPos = $(element).offset().top;
-                var slideHeight = $(element).height();
-                var slideEndPos = slideStartPos + slideHeight;
+                var sectionStartPos = $(element).offset().top;
+                var sectionHeight = $(element).height();
+                var sectionEndPos = sectionStartPos + sectionHeight;
                 
                 // Add new values to array
                 sections.push({
-                    "slide": $(element),
-                    "slideStartPos": slideStartPos,
-                    "slideEndPos": slideEndPos
+                    "section": $(element),
+                    "sectionStartPos": sectionStartPos,
+                    "sectionEndPos": sectionEndPos
                 });
             }
         }
 
         var checkScrollPosition = function(scrollPos){
-            var slideOver = false;
+            var sectionOver = false;
 
             sections.forEach(function(item) {
-                if((scrollPos + settings.scrollOffset) >= item.slideStartPos && (scrollPos + settings.scrollOffset) < item.slideEndPos){
-                    var slideColor = $(item.slide).data('styles-class');
-                    toggleElement.attr('class', targetElementInitialClass + ' ' + slideColor);
-                    slideOver = true;
+                if((scrollPos + settings.scrollOffset) >= item.sectionStartPos && (scrollPos + settings.scrollOffset) < item.sectionEndPos){
+                    var sectionColor = $(item.section).data('styles-class');
+                    toggleElement.attr('class', targetElementInitialClass + ' ' + sectionColor);
+                    sectionOver = true;
                 }
             });
 
-            if (!slideOver){
+            if (!sectionOver){
                 toggleElement.attr('class', targetElementInitialClass);
             }
         }
